@@ -37,3 +37,6 @@ int main()
     cout<<"decimal number is : "<<binarytodec(1101001)<<endl;
     return 0;
 }  
+
+
+cout<<"helo"<<endl
