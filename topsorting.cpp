@@ -1,7 +1,7 @@
 #include<iostream>
 #include<list>
 #include<vector>
-#include<stack>
+#include<queue>
 using namespace std;
 class graph 
 
@@ -21,6 +21,44 @@ class graph
 
     void topsort()
     {
+        vector<int>res;
+        vector<int>indegree(v,0);
+        for(int u=0;u<v;u++)
+        {
+            for(int v:l[u])
+            {
+                indegree[v]++;
+            }
+        }
+        queue<int>q;
+        for(int i=0;i<v;i++)
+        {
+            if(indegree[i]==0)
+            {
+                q.push(i);
+            }
+        }
+        while(q.size()>0)
+        {
+            int curr=q.front();
+            q.pop();
+            res.push_back(curr);
+            for(int v:l[curr])
+            {
+                 indegree[v]--;
+                 if(indegree[v]==0)
+                 {
+                    q.push(v);
+
+                 }
+            }
+
+        }
+        for(int val:res)
+        {
+            cout<<val<<" ";
+        }
+        cout<<endl;
         
     }
     
