@@ -34,7 +34,7 @@ class graph
     }
 
     void dfsHelper(int u,vector<bool>&visited)
-    {
+    { 
         cout<<u<<" ";
         visited[u]=true;
         for(int v:l[u])
@@ -42,27 +42,28 @@ class graph
             if(!visited[v])
             {
                 dfsHelper(v,visited);
-            }
-        }
+            }                      
+        }         
     }
-    void dfs()
+    void dfs()    
     {
-        int src=0;
+        int src=0; 
         vector<bool>visited(v,false);
-        dfsHelper(src,visited);
+        dfsHelper(src,visited); 
         cout<<endl;
-    }
+    } 
 };
 
 
 int main()
 {
     graph g(5);
-    g.addEdge(0,1);
-    g.addEdge(1,2);
-    g.addEdge(1,3);
-    g.addEdge(2,4);
-    g.dfs();
+    g.addEdge(0,1); 
+    g.addEdge(1,2); 
+    g.addEdge(1,3); 
+    g.addEdge(2,4); 
+    g.dfs(); 
     return 0;
 
 }
+ 

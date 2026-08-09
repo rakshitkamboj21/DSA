@@ -37,7 +37,7 @@ vector<int>twosum(vector<int> &arr,int tar)
             {
                 actualsum+=grid[i][j];
                 if(s.find(grid[i][j])!=s.end())
-                {
+                
                     a=grid[i][j];
                     ans1.push_back(a);
                 }
